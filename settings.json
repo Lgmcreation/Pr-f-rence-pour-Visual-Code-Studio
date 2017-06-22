@@ -1,0 +1,20 @@
+// Placez vos paramètres dans ce fichier pour remplacer les paramètres par défaut
+{
+    "editor.wordWrap": "on",
+    "editor.fontSize": 13,
+    "editor.lineHeight": 28,
+    "editor.tabSize": 2,
+    "editor.tabCompletion": true,
+    "editor.snippetSuggestions" :"top",
+    //"editor.insertSpaces": false,
+    "workbench.colorCustomizations": {
+        "editorLineNumber.foreground": "#D18EC2",
+        "activityBar.background": "#3fa0d5",
+        "editor.background" : "#2b2b2b",
+        "scrollbarSlider.activeBackground": "#3fa0d5"
+    },
+    "window.zoomLevel": 0,
+    "files.exclude": {
+        "nodes_modules" : true 
+    }
+}

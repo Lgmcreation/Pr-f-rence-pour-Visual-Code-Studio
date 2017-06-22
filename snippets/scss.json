@@ -1,0 +1,22 @@
+{
+	"After content": {
+		"prefix": "after",
+		"body": [
+			"&:after{",
+				"\t content:'';",
+				"\t ${1}",
+			"}"
+		],
+		"description": "After content"
+	},
+	"Before content": {
+		"prefix": "before",
+		"body": [
+			"&:before{",
+				"\t content:'';",
+				"\t ${1}",
+			"}"
+		],
+		"description": "Before content"
+	}
+}

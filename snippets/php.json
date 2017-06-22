@@ -1,0 +1,68 @@
+{
+  "Loop Wordpress": {
+		"prefix": "wloop",
+		"body": [
+			"<?php if ( have_posts() ) : ?>",
+			"<?php : while ( have_posts() ) : the_post(); ?>",
+			"<?php endwhile; ?>"
+		],
+		"description": "Loop"
+	},
+
+	"WP QUERY": {
+		"prefix": "wquery",
+		"body": [
+			"<?php args_${1} = array(",
+						"\t\t 'post_type' => ''",
+						"\t\t 'order' => ''",
+ 						"\t);",
+        	"${2} = new WP_Query(args_${1}); ?>",
+			"<?php if( ${2}->have_posts() ): ?>",
+				"\t<div class=\"\">",
+				"\t<?php while( ${2}->have_posts() ): ${2}->the_post(); ?>",
+					"\t\t<div class=\"\">",
+						"\t\t\t<a href=\"<?php echo get_permalink(); ?>\" title=\"<?php echo the_title(); ?>\">",
+						"\t\t\t</a>",
+					"\t\t</div>",
+				"\t<?php endwhile; ?>",
+				"\t</div>",
+            "<?php endif; ?>",
+            "<?php wp_reset_postdata(); ?>"
+		],
+		"description": "WP QUERY"
+	},
+	"ACF Galery": {
+		"prefix": "wacfgallery",
+		"body": [
+			"<?php ${1} = get_post_meta( get_the_ID(), '${2}' , true);",
+			"if( ${1} ) :",
+  				"\tforeach( ${1} as id ) :",
+    			"\t\techo wp_get_attachment_image( id, 'medium' );",
+    			"\tendfor;",
+			"endif;"
+		],
+		"description": "ACF Galery"
+	},
+	"ACF Repeater": {
+		"prefix": "wacfrepeater",
+		"body": [
+			"${1} = get_post_meta( get_the_ID(), '${2}' , true);",
+			"if( ${1} ) :",
+  				"\tfor( i = 0; i < $1; i++ ) :",
+    			"\t\t/$text = esc_html( get_post_meta( get_the_ID(), '&2' . $i . '_title', true ) );",
+    			"\tendfor;",
+			"endif;"
+		],
+		"description": "ACF Repeater"
+	},
+	    "For Loop": {
+        "prefix": "for",
+        "body": [
+            "for (var ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
+            "\tvar ${3:element} = ${2:array}[${1:index}];",
+            "\t$0",
+            "}"
+        ],
+        "description": "For Loop"
+    }
+}

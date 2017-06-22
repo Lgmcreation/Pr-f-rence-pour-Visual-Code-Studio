@@ -1,0 +1,5 @@
+// Placez vos combinaisons de touches dans ce fichier pour remplacer les valeurs par défaut
+[
+  { "key": "Enter",             "command": "colonize.newline",
+                                     "when": "editorTextFocus && editorLangId == scss && !suggestWidgetVisible" }
+]
