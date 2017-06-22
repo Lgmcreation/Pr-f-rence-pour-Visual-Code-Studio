@@ -12,5 +12,3 @@ vscode-icons
 scss
 html pour wordpress
 php pour wordpress
-
-
